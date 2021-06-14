@@ -8,11 +8,10 @@ namespace OOP_Igra
 {
 
     /*
-     * Events have 4 priority levels
-     *  1 - traps/keys
-     *  2 - items
-     *  3 - fighting enemys
-     *  4 - Story class function calls
+     * Events have 3 priority levels
+     *  1 - traps/keys(location based events), using items
+     *  2 - fighting enemies
+     *  3 - Story class function calls
      */
     class Events
     {
@@ -26,6 +25,7 @@ namespace OOP_Igra
         {
             foreach(funcPtr item in EventList){
                 item.Invoke();
+                EventList.Remove(item);
             }
             EventList.Clear();
         }

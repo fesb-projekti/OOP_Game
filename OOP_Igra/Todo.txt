@@ -18,3 +18,7 @@ Add ENEMY BATTLE DISPLAY to "partial class Display" -> solve for situations with
 Add names of weapons, potions, enemies, etc. to "Constants"
 
 Finish inventory
+
+Organize displaying of playerMenu, Inventory with playerView
+
+Organize displaying of MainMenu

@@ -34,5 +34,11 @@ namespace OOP_Igra
             this.x = x;
             this.y = y;
         }
+
+        public Point(Point source)
+        {
+            this.x = source.X();
+            this.y = source.Y();
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace OOP_Igra
             MapGenerator.InitializeMap(GameVariables.map);
             //make player           
             Player player1 = new Player();
-            //make 3 event objects, each represents one priority level
+            //make 3 event objects, each represents one priority level (? see "Events.cs")
             List<Events> events = new List<Events>();
             events.Add(new Events());
             events.Add(new Events());
@@ -33,6 +33,9 @@ namespace OOP_Igra
 
                 if(player1.Input()) continue;
 
+                /*
+                 * ADD EventHandlers for all events that can happen, e.g. moving on trap, coming within range to fight enemy, using potions etc.
+                 */
                 //activate all events that are triggered because player moved
                 foreach(Events e in events)
                 {
