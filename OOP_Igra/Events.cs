@@ -16,15 +16,15 @@ namespace OOP_Igra
      */
     class Events
     {
-        private List<Ptr> EventList = new List<Ptr>();
-        public void AddEvent(Ptr item)
+        private List<funcPtr> EventList = new List<funcPtr>();
+        public void AddEvent(funcPtr item)
         {
             EventList.Add(item);
         }
 
         public void Activate()
         {
-            foreach(Ptr item in EventList){
+            foreach(funcPtr item in EventList){
                 item.Invoke();
             }
             EventList.Clear();

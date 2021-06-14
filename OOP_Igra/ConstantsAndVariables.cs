@@ -15,6 +15,5 @@ namespace OOP_Igra
     {
         public static int[,] map = new int[Constants.mapWidth, Constants.mapHeight];
     }
-    public delegate void Ptr();
-     
+    public delegate void funcPtr();
 }

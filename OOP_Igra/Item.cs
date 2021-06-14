@@ -24,8 +24,8 @@ namespace OOP_Igra
     public class Consumeable : Item
     {
         int quantity;
-        Ptr effect;
-        Consumeable(Ptr ef)
+        funcPtr effect;
+        Consumeable(funcPtr ef)
         {
             quantity = 0;
             effect = ef;

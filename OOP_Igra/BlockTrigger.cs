@@ -9,6 +9,6 @@ namespace OOP_Igra
     class BlockTrigger
     {
         private Point location = new Point();
-        private Ptr effect;
+        private funcPtr effect;
     }
 }
