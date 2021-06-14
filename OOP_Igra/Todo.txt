@@ -1,0 +1,20 @@
+﻿To do:
+
+figure out how to pass pointer to a function as function argument - done -> test it!
+figure out how to assign pointer to a function to a variable - done -> test it!
+
+Add KEY points to the map and define doors.
+	-> maybe make map by drawing graphs of certain functions (e.g. sin(x) and y = x^2) with width of 3
+	-> because functions in use are "continuous functions" we are guaranteed to have acces to the whole map (no isolated spaces, except those blocked by doors)
+		-> DOORS would be points where theese functions intersect
+	-> define KEY placement
+
+Add ENEMIES
+	-> movement with A* algorithm  - if player is in their radius 
+
+Add ENEMY BATTLE DISPLAY to "partial class Display" -> solve for situations with multiple enemies 
+	-> mybe pokemon like? 
+
+Add names of weapons, potions, enemies, etc. to "Constants"
+
+Finish inventory

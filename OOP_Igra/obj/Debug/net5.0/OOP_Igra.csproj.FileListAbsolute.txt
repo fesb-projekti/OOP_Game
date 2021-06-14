@@ -1,0 +1,16 @@
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\OOP_Igra.exe
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\OOP_Igra.deps.json
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\OOP_Igra.runtimeconfig.json
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\OOP_Igra.runtimeconfig.dev.json
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\OOP_Igra.dll
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\ref\OOP_Igra.dll
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\bin\Debug\net5.0\OOP_Igra.pdb
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.csprojAssemblyReference.cache
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.AssemblyInfoInputs.cache
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.AssemblyInfo.cs
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.csproj.CoreCompileInputs.cache
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.dll
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\ref\OOP_Igra.dll
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.pdb
+C:\Users\AldoBujević\source\repos\OOP_Igra\OOP_Igra\obj\Debug\net5.0\OOP_Igra.genruntimeconfig.cache
