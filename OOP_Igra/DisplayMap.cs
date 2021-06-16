@@ -22,6 +22,7 @@ namespace OOP_Igra
 
         public static void ShowMap()
         {
+            Console.Clear();
             for (int i = 0; i < Constants.mapWidth; i++)
             {
                 for (int j = 0; j < Constants.mapHeight; j++)
