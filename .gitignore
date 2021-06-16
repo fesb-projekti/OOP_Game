@@ -348,9 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
 *.cache
 *.exe
 *.pdb
-OOP_Igra/obj/Debug/net5.0/OOP_Igra.csproj.FileListAbsolute.txt
-OOP_Igra/obj/OOP_Igra.csproj.nuget.dgspec.json
-OOP_Igra/obj/OOP_Igra.csproj.nuget.g.props
+*.dll
+*.json
+*.props
