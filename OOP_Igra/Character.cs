@@ -12,7 +12,7 @@ namespace OOP_Igra
         public int positionY;
         public int attack;
         public int defense;
-        public int Mhp;
+        public int max_hp;
         public int hp;
         public int vision;
     }

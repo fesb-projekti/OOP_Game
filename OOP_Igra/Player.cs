@@ -13,7 +13,7 @@ namespace OOP_Igra
         {
             this.attack = 2;
             this.defense = 2;
-            this.Mhp = 10;
+            this.max_hp = 10;
             this.hp = 10;
             this.positionX = 5;
             this.positionY = 5;
