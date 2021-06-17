@@ -5,7 +5,6 @@ namespace OOP_Igra
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             //make map

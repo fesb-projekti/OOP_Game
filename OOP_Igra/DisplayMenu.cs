@@ -10,7 +10,7 @@ namespace OOP_Igra
     {
         public static void Menu()
         {
-            // help, map so far, inventory, Information
+            // help, map so far, inventory, Information ...
             Console.WriteLine("This is menu....");
         }
 

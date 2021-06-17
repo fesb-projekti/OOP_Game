@@ -5,7 +5,7 @@ figure out how to assign pointer to a function to a variable - done -> test it!
 
 Add KEY points to the map and define doors.
 	-> maybe make map by drawing graphs of certain functions (e.g. sin(x) and y = x^2) with width of 3
-	-> because functions in use are "continuous functions" we are guaranteed to have acces to the whole map (no isolated spaces, except those blocked by doors)
+	-> because functions in use are "continuous functions" we are guaranteed to have access to the whole map (no isolated spaces, except those blocked by doors)
 		-> DOORS would be points where theese functions intersect
 	-> define KEY placement
 
