@@ -30,3 +30,10 @@ C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\obj\Debug\net5.0\OOP_Igra.dll
 C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\obj\Debug\net5.0\ref\OOP_Igra.dll
 C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\obj\Debug\net5.0\OOP_Igra.pdb
 C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\obj\Debug\net5.0\OOP_Igra.genruntimeconfig.cache
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\obj\Debug\net5.0\OOP_Igra.csproj.ResolveComReference.cache
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\AldoBujević\Source\GitRepos\OOP_Igra\obj\Debug\net5.0\OOP_Igra.csproj.CopyComplete

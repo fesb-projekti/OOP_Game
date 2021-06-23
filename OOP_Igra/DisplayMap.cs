@@ -12,20 +12,26 @@ namespace OOP_Igra
         {
             return key switch
             {
-                1 => "O",
-                2 => "W",
-                0 => "_",
+                0 => "_", //passable terrain
+                1 => "O", //player
+                20 => "w", // warior
+                21 => "W", // warior strong
+                22 => "m", // mage
+                23 => "M", // mage strong
+                90 => Convert.ToChar(9441 + 177).ToString(), //unlockable door
+                95 => "k", //key
+                101 => "X", //end
                 //-1 => "*",
-                _ => "*",
+                _ => Convert.ToChar(9441 + 178).ToString(), //wall ▓
             };
         }
 
         public static void ShowMap()
         {
             Console.Clear();
-            for (int i = 0; i < Constants.mapWidth; i++)
+            for (int i = 0; i < GameVariables.mapWidth; i++)
             {
-                for (int j = 0; j < Constants.mapHeight; j++)
+                for (int j = 0; j < GameVariables.mapHeight; j++)
                 {
                     Console.Write("|" + PrintCharKey(GameVariables.map[i, j]));
                 }

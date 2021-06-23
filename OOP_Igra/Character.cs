@@ -8,8 +8,7 @@ namespace OOP_Igra
 {
     abstract class Character
     {
-        public int positionX;
-        public int positionY;
+        public Point position;
         public int attack;
         public int defense;
         public int max_hp;

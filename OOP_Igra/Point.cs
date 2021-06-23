@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Igra
 {
-    class Point
+    public class Point
     {
         private int x;
         private int y;
@@ -39,6 +39,22 @@ namespace OOP_Igra
         {
             this.x = source.X();
             this.y = source.Y();
+        }
+        public void moveUp(int steps)
+        {
+            x -= steps;
+        }
+        public void moveDown(int steps)
+        {
+            x += steps;
+        }
+        public void moveLeft(int steps)
+        {
+            y -= steps;
+        }
+        public void moveRight(int steps)
+        {
+            y += steps;
         }
     }
 }
