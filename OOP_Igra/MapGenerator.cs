@@ -3,114 +3,122 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.IO;
 
 namespace OOP_Igra
 {
     //this class initializes the map
     /*
-     * firstly whole map is set to -1 (unpassable wall)
-     * by calling functions RoomN passable terrain is added
-     * coordinates given in roomPoints must be choosen in a way that doesn't cause overlapping of rooms
+     * Map is read for a bitmap file (one for each level)
      */
     class MapGenerator
     {
-        public static void InitializeMap(int[,] map)
+        public static void InitializeMap()
         {
-            for (int i = 0; i < Constants.mapWidth; i++)
-            {
-                for (int j = 0; j < Constants.mapHeight; j++)
-                {
-                    map[i, j] = -1;
-                }
-            }
-
-            //uredit da ide po Point nizu kojeg treba jos napravit.
-
-            
-            Room1(map, new Point(1,1));
-            Room2(map, new Point(1, 11));
-            Room3(map, new Point(11, 1));
-            Room4(map, new Point(11, 11));
+            ReadFromBitmap();
         }
 
-        static void Room1(int[,] map, Point P)
+        private static void ReadFromBitmap()
         {
-            int roomWidth = 10;
-            for (int i = 0; i < roomWidth; i++)
-            {
-                for (int j = 0; j < roomWidth; j++)
-                {
-                    map[P.X() + i, P.Y() + j] = 0;
-                }
-            }
-        }
-        static void Room2(int[,] map, Point P)
-        {
-            int roomWidth = 10;
-            for (int j = 0; j < roomWidth; j++)
-            {
-                for (int i = 0; i < roomWidth; i++)
-                {
-                    if (i + j >= roomWidth-1)
-                    {
-                        map[P.X() + i, P.Y() + j] = 0;
-                    }
-                }
-            }
-        }
-        static void Room3(int[,] map, Point P)
-        {
-            int roomWidth = 10;
-            for (int i = 0; i < roomWidth; i++)
-            {
-                for (int j = 0; j < roomWidth; j++)
-                {
-                    if (i == j || i + j == roomWidth)
-                    {
-                        map[P.X() + i, P.Y() + j - 1] = 0;
-                        map[P.X() + i, P.Y() + j] = 0;
-                        map[P.X() + i, P.Y() + j + 1] = 0;
-                    }
-                }
-            }
-        }
-        static void Room4(int[,] map, Point P)
-        {
-            int temp = 10;
-            for (int i = 0; i < temp; i++)
-            {
-                for (int j = 0; j < temp; j++)
-                {
-                    map[P.X() + i, P.Y() + j] = 0;
-                }
-            }
-            for (int i = 0; i < temp; i++)
-            {
-                for (int j = 0; j < temp; j++)
-                {
-                    if ((i == 0 || i == 1 || i == 2) && (j == 0 || j == 1 || j == 2))
-                    {
-                        map[P.X() + i, P.Y() + j] = -1;
-                    }
+            //get path to .bmp file for current level
+            string path = Environment.CurrentDirectory;
+            int temp = path.IndexOf(@"OOP_Igra\") + 9; // OOP_Igra\ = 9 char places
+            path = path.Remove(temp, path.Length - temp);
+            path += @"Maps\lvl" + GameVariables.level.ToString() + ".bmp";
 
-                    if ((i == 0 || i == 1 || i == 2) && (j == 7 || j == 8 || j == 9))
-                    {
-                        map[P.X() + i, P.Y() + j] = -1;
-                    }
+            //load bitmap
+            Bitmap myBitmap = new Bitmap(path);
 
-                    if ((i == 7 || i == 8 || i == 9) && (j == 0 || j == 1 || j == 2))
-                    {
-                        map[P.X() + i, P.Y() + j] = -1;
-                    }
+            //set GameVariables
+            GameVariables.map = new int[myBitmap.Width, myBitmap.Height];
+            GameVariables.mapHeight = myBitmap.Height;
+            GameVariables.mapWidth = myBitmap.Width;
 
-                    if ((i == 7 || i == 8 || i == 9) && (j == 7 || j == 8 || j == 9))
+            //read map from bitmap
+            for (int i = 0; i < myBitmap.Width; i++)
+            {
+                for (int j = 0; j < myBitmap.Height; j++)
+                {
+                    //get the color of a pixel within myBitmap
+                    Color pixelColor = myBitmap.GetPixel(i, j);
+                    //create string with values of RGB for comparison
+                    string pixelColorStringValue =
+                        pixelColor.R.ToString("D3") + " " +
+                        pixelColor.G.ToString("D3") + " " +
+                        pixelColor.B.ToString("D3");
+                    //assign values to map depentig on pixel color
+                    switch (pixelColorStringValue)
                     {
-                        map[P.X() + i, P.Y() + j] = -1;
-                    }
+                        case "255 255 255":
+                            {
+                                // passable ground, plain
+                                GameVariables.map[j, i] = 0;
+                                break;
+                            }
+                        
+                        case "050 000 000":
+                            {
+                                //unlockable door
+                                GameVariables.map[j, i] = 90;
+                                break;
+                            }
+                        case "050 050 000":
+                            {
+                                // key
+                                GameVariables.map[j, i] = 95;
+                                break;
+                            }
+                        case "255 000 000":
+                            {
+                                // enemy warior
+                                GameVariables.map[j, i] = 20;
+                                break;
+                            }
+                        case "255 100 100":
+                            {
+                                // enemy warior strong
+                                GameVariables.map[j, i] = 21;
+                                break;
+                            }
+                        case "000 000 255":
+                            {
+                                // enemy mage
+                                GameVariables.map[j, i] = 22;
+                                break;
+                            }
+                        case "100 100 255":
+                            {
+                                // enemy mage strong
+                                GameVariables.map[j, i] = 23;
+                                break;
+                            }
+                        case "255 255 000":
+                            {
+                                // end point
+                                GameVariables.map[j, i] = 101;
+                                break;
+                            }
+                        case "111 111 111":
+                            {
+                                // start point
+                                GameVariables.map[j, i] = 0;
+                                GameVariables.startPoint = new Point(j, i);
+                                break;
+                            }
+                        //case "000 000 000":
+                        //    {
+                        //        // black pixel
+                        //        map[x, y] = -1;
+                        //        break;
+                        //    }
+                        default:
+                            {
+                                //unpassable wall
+                                GameVariables.map[j, i] = -1;
+                                break;
+                            }
 
-                    if ((i == 4 || i == 5) && (j == 4 || j == 5))
-                    {
-                        map[P.X() + i, P.Y() + j] = -1;
                     }
                 }
             }

@@ -9,16 +9,15 @@ namespace OOP_Igra
     class Player : Character
     {
         private List<Item> Inventory;
-        public Player()
+        public Player(Point p)
         {
             this.attack = 2;
             this.defense = 2;
             this.max_hp = 10;
             this.hp = 10;
-            this.positionX = 5;
-            this.positionY = 5;
+            this.position = new Point(p);
+            UpdateMapPosition();
             this.vision = 6;
-            GameVariables.map[positionX, positionY] = 1;
             Inventory = new List<Item>();
             Inventory.Add(new Item("Medal","A lucky charm you always carry with you."));
         }
@@ -28,7 +27,21 @@ namespace OOP_Igra
             q = Console.ReadKey(true); // true = don't show pressed key, flase = show pressed key
             return PlayerInput(q.KeyChar);
         }
-
+        public void UpdateMapPosition()
+        {
+            GameVariables.map[position.X(), position.Y()] = 1;
+        }
+        public void UpdateMapPosition(int x, int y)
+        {
+            position.SetX(x);
+            position.SetY(y);
+            GameVariables.map[position.X(), position.Y()] = 1;
+        }
+        public void UpdateMapPosition(Point p)
+        {
+            position = new Point(p);
+            GameVariables.map[position.X(), position.Y()] = 1;
+        }
         /*
          * returns true if non-moving action is selected
          * returns false if player moved
@@ -39,10 +52,10 @@ namespace OOP_Igra
             {
                 case 'A':
                 case 'a':
-                    if (GameVariables.map[positionX, positionY - 1] >= 0)
+                    if (GameVariables.map[position.X(), position.Y() - 1] >= 0)
                     {
-                        GameVariables.map[positionX, positionY] = 0;
-                        positionY -= 1;
+                        GameVariables.map[position.X(), position.Y()] = 0;
+                        position.moveLeft(1);
                     }
                     else
                     {
@@ -52,10 +65,10 @@ namespace OOP_Igra
                     break;
                 case 'W':
                 case 'w':
-                    if (GameVariables.map[positionX-1, positionY] >= 0)
+                    if (GameVariables.map[position.X()-1, position.Y()] >= 0)
                     {
-                        GameVariables.map[positionX, positionY] = 0;
-                        positionX -= 1;
+                        GameVariables.map[position.X(), position.Y()] = 0;
+                        position.moveUp(1);
                     }
                     else
                     {
@@ -65,10 +78,10 @@ namespace OOP_Igra
                     break;
                 case 'D':
                 case 'd':
-                    if (GameVariables.map[positionX, positionY+1] >= 0)
+                    if (GameVariables.map[position.X(), position.Y()+1] >= 0)
                     {
-                        GameVariables.map[positionX, positionY] = 0;
-                        positionY += 1;
+                        GameVariables.map[position.X(), position.Y()] = 0;
+                        position.moveRight(1);
                     }
                     else
                     {
@@ -78,10 +91,10 @@ namespace OOP_Igra
                     break;
                 case 'S':
                 case 's':
-                    if (GameVariables.map[positionX + 1, positionY] >= 0)
+                    if (GameVariables.map[position.X() + 1, position.Y()] >= 0)
                     {
-                        GameVariables.map[positionX, positionY] = 0;
-                        positionX += 1;
+                        GameVariables.map[position.X(), position.Y()] = 0;
+                        position.moveDown(1);
                     }
                     else
                         {
@@ -101,7 +114,7 @@ namespace OOP_Igra
                     Console.WriteLine("INPUT ERROR!");
                     return true;
             }
-            GameVariables.map[positionX, positionY] = 1;
+            UpdateMapPosition();
             return false;
         }
     }

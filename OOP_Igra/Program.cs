@@ -7,10 +7,11 @@ namespace OOP_Igra
     {
         static void Main(string[] args)
         {
+            
             //make map
-            MapGenerator.InitializeMap(GameVariables.map);
-            //make player           
-            Player player1 = new Player();
+            MapGenerator.InitializeMap();
+            //make player
+            Player player1 = new Player(GameVariables.startPoint);
             //make 3 event objects, each represents one priority level (? see "Events.cs")
             List<Events> events = new List<Events>();
             events.Add(new Events());
@@ -22,12 +23,12 @@ namespace OOP_Igra
             Console.ReadKey(true);
 
             //game loop
-            while(player1.hp > 0)
+            while (player1.hp > 0)
             {
-                //Console.Clear();
                 
+
                 Display.ShowMap(); //comment when Display.ShowCharacterView() is done
-                //Display.ShowCharacterView(player1); // uncomment when done
+                Display.ShowCharacterView(player1);
                 Display.ShowCharacterMenu(player1);
 
                 if(player1.Input()) continue;

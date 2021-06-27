@@ -31,5 +31,12 @@ namespace OOP_Igra
             effect = ef;
             // e.g. effect = Effects.Heal;
         }
+
+        public void SetQuantity(int amount)
+        {
+            quantity = amount;
+        }
     }
+
+    
 }

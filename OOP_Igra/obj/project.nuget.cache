@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6fjwoEysCU1WgkIMBfDqPtsIlIcV4bNtVGNpcyflBLXaeiQKKTdOeExwYBM5Y4fxsYlt2p/CqXZhNMdy5XSA0g==",
+  "dgSpecHash": "wz910xsqfAO+7Mpoy4x0efWDTx7gV7BEDng6ti5PVtCrBb5VlwOUL/07FAXRP1fZJLkP6u5HYjNqCWyZwbNrkA==",
   "success": true,
   "projectFilePath": "C:\\Users\\AldoBujević\\Source\\GitRepos\\OOP_Igra\\OOP_Igra.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\AldoBujević\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\AldoBujević\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\AldoBujević\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
