@@ -10,7 +10,7 @@ namespace OOP_Igra
     {
         private int x;
         private int y;
-
+        
         public int X() { return x; }
         public int Y() { return y; }
         public void SetX(int input) { this.x = input; }

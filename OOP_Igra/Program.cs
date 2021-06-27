@@ -28,7 +28,7 @@ namespace OOP_Igra
                 
 
                 Display.ShowMap(); //comment when Display.ShowCharacterView() is done
-                //Display.ShowCharacterView(player1); // uncomment when done
+                Display.ShowCharacterView(player1);
                 Display.ShowCharacterMenu(player1);
 
                 if(player1.Input()) continue;

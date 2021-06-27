@@ -23,7 +23,7 @@ namespace OOP_Igra
         {
             //get path to .bmp file for current level
             string path = Environment.CurrentDirectory;
-            int temp = path.IndexOf(@"OOP_Igra\") + 9; // OOP_Igra\ = 9 char palaces
+            int temp = path.IndexOf(@"OOP_Igra\") + 9; // OOP_Igra\ = 9 char places
             path = path.Remove(temp, path.Length - temp);
             path += @"Maps\lvl" + GameVariables.level.ToString() + ".bmp";
 
