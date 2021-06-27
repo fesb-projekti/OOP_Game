@@ -46,7 +46,7 @@ namespace OOP_Igra
                     // (i - x) - 3*r - 1 < (y - j) - bottom right border
                     if ((i - x) - r - 1 < (j - y) && (i - x) + r + 1 > (j - y) && (i - x) - r + 1 > (y - j) && (i - x) - 3 * r - 1 < (y - j))
                     {
-                        if (i < 0 || j < 0)
+                        if (i < 0 || j < 0 || i > GameVariables.mapWidth - 1 || j > GameVariables.mapHeight - 1)
                             line += "|" + Convert.ToChar(9441 + 176).ToString();
                         else
                             line += "|" + PrintCharKey(GameVariables.map[i, j]);

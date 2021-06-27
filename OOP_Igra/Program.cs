@@ -27,7 +27,7 @@ namespace OOP_Igra
             {
                 
 
-                Display.ShowMap(); //comment when Display.ShowCharacterView() is done
+                //Display.ShowMap(); //comment when Display.ShowCharacterView() is done
                 Display.ShowCharacterView(player1);
                 Display.ShowCharacterMenu(player1);
 
@@ -41,6 +41,7 @@ namespace OOP_Igra
                 {
                     e.Activate();
                 }
+                Console.Clear();
             }
         }
     }
