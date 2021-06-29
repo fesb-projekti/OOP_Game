@@ -10,18 +10,10 @@ namespace OOP_Igra
     {
         private int x;
         private int y;
-        
-        public int X() { return x; }
-        public int Y() { return y; }
+        public int X { get { return x; } }
+        public int Y { get { return y; } }
         public void SetX(int input) { this.x = input; }
         public void SetY(int input) { this.y = input; }
-
-        /* implicit cast from (int,int) to Point   ????? make it work
-         *public static implicit operator Point(int a, int b)
-         *{
-         *    return new Point(a, b);
-         *}
-         */
 
         //constructors
         public Point()
@@ -37,22 +29,23 @@ namespace OOP_Igra
 
         public Point(Point source)
         {
-            this.x = source.X();
-            this.y = source.Y();
+            this.x = source.X;
+            this.y = source.Y;
         }
-        public void moveUp(int steps)
+        //movement for certain number of steps
+        public void MoveUp(int steps)
         {
             x -= steps;
         }
-        public void moveDown(int steps)
+        public void MoveDown(int steps)
         {
             x += steps;
         }
-        public void moveLeft(int steps)
+        public void MoveLeft(int steps)
         {
             y -= steps;
         }
-        public void moveRight(int steps)
+        public void MoveRight(int steps)
         {
             y += steps;
         }

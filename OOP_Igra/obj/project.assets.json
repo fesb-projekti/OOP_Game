@@ -155,11 +155,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AldoBujević\\Source\\GitRepos\\OOP_Igra\\OOP_Igra.csproj",
+      "projectUniqueName": "C:\\Users\\AldoBujević\\Source\\Repos\\OOP_Game\\OOP_Igra\\OOP_Igra.csproj",
       "projectName": "OOP_Igra",
-      "projectPath": "C:\\Users\\AldoBujević\\Source\\GitRepos\\OOP_Igra\\OOP_Igra.csproj",
+      "projectPath": "C:\\Users\\AldoBujević\\Source\\Repos\\OOP_Game\\OOP_Igra\\OOP_Igra.csproj",
       "packagesPath": "C:\\Users\\AldoBujević\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AldoBujević\\Source\\GitRepos\\OOP_Igra\\obj\\",
+      "outputPath": "C:\\Users\\AldoBujević\\Source\\Repos\\OOP_Game\\OOP_Igra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

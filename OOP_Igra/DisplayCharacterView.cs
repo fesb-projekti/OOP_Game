@@ -21,14 +21,19 @@ namespace OOP_Igra
             }
         }
 
+        private static void GenerateShadows(List<string> view)
+        {
+
+        }
+
         // function for generating character view
         private static List<string> GenerateCharacterView(Character character)
         {
             
             int r = character.vision;
             // x,y are coordinates of top left corner of the view
-            int x = character.position.X() - r;
-            int y = character.position.Y() - r;
+            int x = character.position.X - r;
+            int y = character.position.Y - r;
             //view container
             List<string> view = new List<string>();
 
@@ -58,6 +63,7 @@ namespace OOP_Igra
                 }
                 line += "|";
                 view.Add(line);
+                GenerateShadows(view);
             }
             return view;
         }

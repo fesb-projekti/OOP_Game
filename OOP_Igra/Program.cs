@@ -7,7 +7,8 @@ namespace OOP_Igra
     {
         static void Main(string[] args)
         {
-            
+            //Initialize blocks that make up the map
+            Block.InitialiseBlocks();
             //make map
             MapGenerator.InitializeMap();
             //make player

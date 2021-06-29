@@ -18,7 +18,7 @@ namespace OOP_Igra
         }
         public void TriggerCheck(Point P)
         {
-            if(P.X() == location.X() && P.Y() == location.Y())
+            if(P.X == location.X && P.Y == location.Y)
             {
                 effect.Invoke();
             }
