@@ -47,79 +47,23 @@ namespace OOP_Igra
                         pixelColor.R.ToString("D3") + " " +
                         pixelColor.G.ToString("D3") + " " +
                         pixelColor.B.ToString("D3");
-                    //assign values to map depentig on pixel color
-                    switch (pixelColorStringValue)
-                    {
-                        case "255 255 255":
-                            {
-                                // passable ground, plain
-                                GameVariables.map[j, i] = 0;
-                                break;
-                            }
-                        
-                        case "050 000 000":
-                            {
-                                //unlockable door
-                                GameVariables.map[j, i] = 90;
-                                break;
-                            }
-                        case "050 050 000":
-                            {
-                                // key
-                                GameVariables.map[j, i] = 95;
-                                break;
-                            }
-                        case "255 000 000":
-                            {
-                                // enemy warior
-                                GameVariables.map[j, i] = 20;
-                                break;
-                            }
-                        case "255 100 100":
-                            {
-                                // enemy warior strong
-                                GameVariables.map[j, i] = 21;
-                                break;
-                            }
-                        case "000 000 255":
-                            {
-                                // enemy mage
-                                GameVariables.map[j, i] = 22;
-                                break;
-                            }
-                        case "100 100 255":
-                            {
-                                // enemy mage strong
-                                GameVariables.map[j, i] = 23;
-                                break;
-                            }
-                        case "255 255 000":
-                            {
-                                // end point
-                                GameVariables.map[j, i] = 101;
-                                break;
-                            }
-                        case "111 111 111":
-                            {
-                                // start point
-                                GameVariables.map[j, i] = 0;
-                                GameVariables.startPoint = new Point(j, i);
-                                break;
-                            }
-                        //case "000 000 000":
-                        //    {
-                        //        // black pixel
-                        //        map[x, y] = -1;
-                        //        break;
-                        //    }
-                        default:
-                            {
-                                //unpassable wall
-                                GameVariables.map[j, i] = -1;
-                                break;
-                            }
 
+                    //assign values to map dependig on pixel color
+                    if(pixelColorStringValue.Equals("111 111 111")) //functional blocks don't show on map
+                    {
+                        GameVariables.startPoint = new Point(j, i);
                     }
+                    else
+                    {
+                        foreach (Block b in Block.blocksList)
+                        {
+                            if (b.CompareRGBString(pixelColorStringValue))
+                            {
+                                GameVariables.map[j, i] = b.ValueOnMap;
+                            }
+                        }
+                    }
+                    
                 }
             }
         }

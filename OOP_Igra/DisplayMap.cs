@@ -10,20 +10,15 @@ namespace OOP_Igra
     {
         static string PrintCharKey(int key)
         {
-            return key switch
+            foreach(Block b in Block.blocksList)
             {
-                0 => "_", //passable terrain
-                1 => "O", //player
-                20 => "w", // warior
-                21 => "W", // warior strong
-                22 => "m", // mage
-                23 => "M", // mage strong
-                90 => Convert.ToChar(9441 + 177).ToString(), //unlockable door
-                95 => "k", //key
-                101 => "X", //end
-                //-1 => "*",
-                _ => Convert.ToChar(9441 + 178).ToString(), //wall ▓
-            };
+                if (b.CompareValueOnMap(key))
+                {
+                    return b.ViewCharacter.ToString();
+                }
+            }
+            //if block is undefined it is set to unpassable wall
+            return (Convert.ToChar(9441 + 178)).ToString();
         }
 
         public static void ShowMap()

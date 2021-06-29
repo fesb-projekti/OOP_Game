@@ -33,7 +33,7 @@ namespace OOP_Igra
         {
             foreach(Point block in blocks)
             {
-                GameVariables.map[block.X(), block.Y()] = 0;
+                GameVariables.map[block.X, block.Y] = 0;
             }
         }
 
@@ -42,7 +42,7 @@ namespace OOP_Igra
         {
             foreach (Point block in blocks)
             {
-                GameVariables.map[block.X(), block.Y()] = -1;
+                GameVariables.map[block.X, block.Y] = -1;
             }
         }
     }

@@ -24,38 +24,37 @@ namespace OOP_Igra
         public bool Input()
         {
             ConsoleKeyInfo q;
-            q = Console.ReadKey(true); // true = don't show pressed key, flase = show pressed key
+            q = Console.ReadKey(true); // true = don't show pressed key
             return PlayerInput(q.KeyChar);
         }
         public void UpdateMapPosition()
         {
-            GameVariables.map[position.X(), position.Y()] = 1;
+            GameVariables.map[position.X, position.Y] = 1;
         }
         public void UpdateMapPosition(int x, int y)
         {
             position.SetX(x);
             position.SetY(y);
-            GameVariables.map[position.X(), position.Y()] = 1;
+            GameVariables.map[position.X, position.Y] = 1;
         }
         public void UpdateMapPosition(Point p)
         {
             position = new Point(p);
-            GameVariables.map[position.X(), position.Y()] = 1;
+            GameVariables.map[position.X, position.Y] = 1;
         }
-        /*
-         * returns true if non-moving action is selected
-         * returns false if player moved
-         */
+        
+        // returns true if non-moving action is selected or invalid movement is selected
+        // returns false if player moved        
         private bool PlayerInput(char q)
         {
             switch (q)
             {
                 case 'A':
                 case 'a':
-                    if (GameVariables.map[position.X(), position.Y() - 1] >= 0)
+                    if (GameVariables.map[position.X, position.Y - 1] >= 0 && position.Y - 1 >= 0) //check if passable block and check if out of bounds
                     {
-                        GameVariables.map[position.X(), position.Y()] = 0;
-                        position.moveLeft(1);
+                        GameVariables.map[position.X, position.Y] = 0; //remove old position
+                        position.MoveLeft(1); //move
                     }
                     else
                     {
@@ -65,10 +64,10 @@ namespace OOP_Igra
                     break;
                 case 'W':
                 case 'w':
-                    if (GameVariables.map[position.X()-1, position.Y()] >= 0)
+                    if (GameVariables.map[position.X - 1, position.Y] >= 0 && position.Y - 1 >= 0)
                     {
-                        GameVariables.map[position.X(), position.Y()] = 0;
-                        position.moveUp(1);
+                        GameVariables.map[position.X, position.Y] = 0;
+                        position.MoveUp(1);
                     }
                     else
                     {
@@ -78,10 +77,10 @@ namespace OOP_Igra
                     break;
                 case 'D':
                 case 'd':
-                    if (GameVariables.map[position.X(), position.Y()+1] >= 0)
+                    if (GameVariables.map[position.X, position.Y + 1] >= 0 && position.Y + 1 < GameVariables.mapWidth)
                     {
-                        GameVariables.map[position.X(), position.Y()] = 0;
-                        position.moveRight(1);
+                        GameVariables.map[position.X, position.Y] = 0;
+                        position.MoveRight(1);
                     }
                     else
                     {
@@ -91,10 +90,10 @@ namespace OOP_Igra
                     break;
                 case 'S':
                 case 's':
-                    if (GameVariables.map[position.X() + 1, position.Y()] >= 0)
+                    if (GameVariables.map[position.X + 1, position.Y] >= 0 && position.X + 1 < GameVariables.mapHeight)
                     {
-                        GameVariables.map[position.X(), position.Y()] = 0;
-                        position.moveDown(1);
+                        GameVariables.map[position.X, position.Y] = 0;
+                        position.MoveDown(1);
                     }
                     else
                         {
@@ -114,7 +113,7 @@ namespace OOP_Igra
                     Console.WriteLine("INPUT ERROR!");
                     return true;
             }
-            UpdateMapPosition();
+            UpdateMapPosition(); //put new position in map
             return false;
         }
     }
