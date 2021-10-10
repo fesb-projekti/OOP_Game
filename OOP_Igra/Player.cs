@@ -17,7 +17,7 @@ namespace OOP_Igra
             this.hp = 10;
             this.position = new Point(p);
             UpdateMapPosition();
-            this.vision = 6;
+            this.vision = 8;
             Inventory = new List<Item>();
             Inventory.Add(new Item("Medal","A lucky charm you always carry with you."));
         }
@@ -56,11 +56,6 @@ namespace OOP_Igra
                         GameVariables.map[position.X, position.Y] = 0; //remove old position
                         position.MoveLeft(1); //move
                     }
-                    else
-                    {
-                        Console.WriteLine("INVALID MOVE");
-                        return true;
-                    }
                     break;
                 case 'W':
                 case 'w':
@@ -68,11 +63,6 @@ namespace OOP_Igra
                     {
                         GameVariables.map[position.X, position.Y] = 0;
                         position.MoveUp(1);
-                    }
-                    else
-                    {
-                        Console.WriteLine("INVALID MOVE");
-                        return true;
                     }
                     break;
                 case 'D':
@@ -82,11 +72,6 @@ namespace OOP_Igra
                         GameVariables.map[position.X, position.Y] = 0;
                         position.MoveRight(1);
                     }
-                    else
-                    {
-                        Console.WriteLine("INVALID MOVE");
-                        return true;
-                    }
                     break;
                 case 'S':
                 case 's':
@@ -95,11 +80,6 @@ namespace OOP_Igra
                         GameVariables.map[position.X, position.Y] = 0;
                         position.MoveDown(1);
                     }
-                    else
-                        {
-                        Console.WriteLine("INVALID MOVE");
-                        return true;
-                        }
                     break;
                 case 'M':
                 case 'm':
@@ -109,9 +89,9 @@ namespace OOP_Igra
                 case 'i':
                     Display.Inventory();
                     return true;
-                default:
-                    Console.WriteLine("INPUT ERROR!");
-                    return true;
+                /*default:
+                    //Console.WriteLine("INPUT ERROR!"); // Don't print error and new line map for each input
+                    return true;*/
             }
             UpdateMapPosition(); //put new position in map
             return false;
